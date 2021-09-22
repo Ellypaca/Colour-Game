@@ -1,16 +1,17 @@
-//Colour Game: Poppin Colours?
+//Colour Game
 //Katelynn Bai
 //Sept 22, 2021
+//A game about seeing if the colour matches the word.
 
 //CHANGE COLOURS
 String[] words;
 
 
 color[] colors;
-color red = #FF0900;
-color blue = #0028FF;
-color yellow = #FFFF00;
-color green = #00FF00;
+color orange = #FF5522;
+color blue = #0077DD;
+color yellow = #FFEEAA;
+color green = #99DD88;
 color purple = #7D0086;
 color silver = #c0c0c0;
 
@@ -26,13 +27,15 @@ int gifFrames;
 int f;
 int titleSize;
 
+PFont bagus, bravaryScript, bravary;
+
 
 //GAME VARS
 int rColor, rText;
 int coinflip;
-int score;
+int score, highscore;
 int timer, maxTime, timerW;
-boolean leftKey, rightKey;
+boolean puzzle;
 
 
 
@@ -44,7 +47,7 @@ void setup() {
 
   textAlign(CENTER, CENTER);
   words = new String [6];
-  words[0] = "RED";
+  words[0] = "ORANGE";
   words[1] = "BLUE";
   words[2] = "YELLOW";
   words[3] = "GREEN";
@@ -55,7 +58,7 @@ void setup() {
 
 
   colors = new color [6];
-  colors[0] = red;
+  colors[0] = orange;
   colors[1] = blue;
   colors[2] = yellow;
   colors[3] = green;
@@ -73,10 +76,16 @@ void setup() {
     i++;
   }
 
+  //fonts
+  bagus = createFont("Bagus.otf", 45);
+  bravaryScript = createFont("BravaryScript.ttf", 100);
+  bravary = createFont("Bravary.ttf", 70);
+
 
 
   //GAME
   timer = maxTime = 80; //to make it easier to balance game
+  highscore = 0;
 }
 
 void draw() {
