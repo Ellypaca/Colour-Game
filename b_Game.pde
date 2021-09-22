@@ -38,12 +38,19 @@ void game() {
     } else {                 //puzzle is false
       rText = int(random(0, 6));
       rColor = int(random(0, 6));
+      //while (rText == rColor) {
+      //  rText = int(random(0, 6));
+      //  rColor = int(random(0, 6));
+      //}
 
       if (rText == rColor) {    //(Friend helped me with this) makes sure the word and colour are not equal
         rText = (rText + (int) random(1, 6)) % 6;  //mod divides by x and takes remainder, "forces value between 0 and 5"
       }  //original value + random number 1 to 5, takes remainder.        //convert to int to avoid floating point errors (not enough memory to store all decimals)
     }                                              //1 to 6 because includes the first number and ignores last
   }
+
+
+
 
 
 
@@ -66,7 +73,6 @@ void game() {
 
 
   //timer bar thing at top of screen
-
   timer--;
   fill(255);
   stroke(0);
@@ -75,16 +81,14 @@ void game() {
   timerW = timer*(width/maxTime) ;
   rect(-1, -1, timerW, 50);
 
-  //400
 
 
   if (timer <= 0) {
-    //timer = maxTime;
+    //timer = maxTime;   testing purposes
     mode = GAMEOVER;
   }
 
   //SCORE
-  //put a box around it
   textSize(30);
   text("Score: " + score, 400, 750);
 

@@ -18,9 +18,8 @@ void mousePressed() {
       } else {
         mode = GAMEOVER;
       }
-    } 
-
-    if (mouseX >= 400 && mouseX <= 800 && mouseY >= 0 && mouseY <= 800) {
+    } else{
+    //if (mouseX >= 400 && mouseX <= 800 && mouseY >= 0 && mouseY <= 800) {
       if (puzzle == false) {
         score++;
         println(score);

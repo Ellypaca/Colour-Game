@@ -8,7 +8,14 @@ void intro() {
   if (f == gifFrames) f = 0;
 
   //title
-  fill(0);
+  r++;
+  g++;
+  b++;
+  if (r >= 255) r = (int) (random(1, 254));
+  if (g >= 255) g = (int) (random(1, 254));
+  if (b >= 255) b = (int) (random(1, 254));
+  fill(r, g, b);
+println(r, g, b);
   textFont(bagus);
   text("Colo(u)r Game!", 400, 300);
 

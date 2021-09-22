@@ -1,4 +1,4 @@
-//Colour Game
+//Colour Game!
 //Katelynn Bai
 //Sept 22, 2021
 //A game about seeing if the colour matches the word.
@@ -10,10 +10,10 @@ String[] words;
 color[] colors;
 color orange = #FF5522;
 color blue = #0077DD;
-color yellow = #FFEEAA;
-color green = #99DD88;
-color purple = #7D0086;
-color silver = #c0c0c0;
+color yellow = #FFEE22;
+color green = #aaee22;
+color purple = #AA66DD;
+color pink = #FF55BB;
 
 
 int mode;
@@ -25,7 +25,7 @@ int GAMEOVER = 2;
 PImage [] introGif;
 int gifFrames; 
 int f;
-int titleSize;
+int r, g, b;
 
 PFont bagus, bravaryScript, bravary;
 
@@ -52,7 +52,7 @@ void setup() {
   words[2] = "YELLOW";
   words[3] = "GREEN";
   words[4] = "PURPLE";
-  words[5] = "SILVER";
+  words[5] = "PINK";
 
 
 
@@ -63,9 +63,13 @@ void setup() {
   colors[2] = yellow;
   colors[3] = green;
   colors[4] = purple;
-  colors[5] = silver;
+  colors[5] = pink;
 
-
+  //intro
+  r= (int) (random(1, 254));
+  g= (int) (random(1, 254));
+  b= (int) (random(1, 254));
+  
   //gif
   int i = 0;
   gifFrames = 72;
@@ -83,7 +87,7 @@ void setup() {
 
 
 
-  //GAME
+  //game
   timer = maxTime = 80; //to make it easier to balance game
   highscore = 0;
 }
